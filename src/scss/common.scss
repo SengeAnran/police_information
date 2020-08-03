@@ -1,0 +1,111 @@
+
+// 页面内容宽度
+$wrap-width: 1200px;
+// 页面主题色
+$color-main: #1989fa;
+// $color-main: #344a70;
+// $color-main: #5093c1;
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 16px;
+  // background-color: #fff;
+  // color: #222;
+  color: #344a70;
+  // min-width: $wrap-width;
+  margin: 0;
+}
+
+// img {
+//   width: 100%;
+//   height: 100%;
+// }
+
+.wrap {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: $wrap-width;
+}
+@media screen and (max-width: 600px) {
+  .wrap {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.main-text-color {
+  color: $color-main;
+}
+.main-bg-color {
+  background-color: $color-main;
+}
+
+// 去除a链接样式
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+// 文字链接hover特效
+.text-underline-effect{
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%;
+    bottom: -4px;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:hover::before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+// swiper样式
+.swiper-container{
+  --swiper-theme-color: #1989fa;/* 设置Swiper风格 */
+  --swiper-navigation-color: #eee;/* 单独设置按钮颜色 */
+  --swiper-navigation-size: 30px;/* 设置按钮大小 */
+  height: 100%;
+}
+
+// fullpage样式修改
+.fp-controlArrow {
+  // slide左右箭头
+  &.fp-prev {
+    border-width: 28px 24px 28px 0;
+    border-right-color: rgba(255, 255, 255, .8);
+  }
+  &.fp-next {
+    border-width: 28px 0 28px 24px;
+    border-left-color: rgba(255, 255, 255, .8);
+  }
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: #f3f3f3;
+}
